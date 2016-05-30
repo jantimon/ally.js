@@ -36,12 +36,14 @@ function isFocusRelevantRules({
     context,
   });
 
-  if (!except.shadow && element.shadowRoot) {
+  const nodeName = element.nodeName.toLowerCase();
+
+  if (!except.shadow && element.shadowRoot && nodeName !== 'html') {
     // a Shadow DOM host receives focus when the focus moves to its content
+    // The Chrome extension AdBlockPlus adds a ShadowHost on <html> for <head> and <body>
+    // FIXME: This Exception is made because ADB interferes with local testing
     return true;
   }
-
-  const nodeName = element.nodeName.toLowerCase();
 
   if (nodeName === 'input' && element.type === 'hidden') {
     // input[type="hidden"] supports.cannot be focused
