@@ -15,6 +15,7 @@
 * [build] switching to [lint-staged](https://github.com/okonet/lint-staged) for faster linting during git pre-commit
 * running all [supports][ally/supports] tests in a batch to limit number of reflows - [issue #142](https://github.com/medialize/ally.js/issues/142)
 * [build] adding [rollupify](https://github.com/nolanlawson/rollupify/) to reduce package overhead in build bundle
+* fixing [`ally.is.tabbable`][ally/is/tabbable] to respect `except.scrollable`
 
 ## 1.1.0 - Reality Strikes Back
 
